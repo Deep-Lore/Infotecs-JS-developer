@@ -1,3 +1,206 @@
 @import "_nomalize.scss";
-@import "_variables.scss"
+@import "_variables.scss";
+@import "_fonts.scss";
 
+// styles
+body{
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	font-size: $font-size_big;
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 1440px;
+	width: 100%;
+	padding: 70px 15px 500px 15px;
+}
+
+.dataList{
+	margin-top: 60px;
+	max-width: 800px;
+	width: 100%;
+	&__options-inner{
+		display: block;
+		margin-bottom: 15px;
+	}
+	&__options{
+		position: relative;
+		max-width: 50%;
+	}
+	&__options-amount-input, &__options-sorting-input, &__options-btn-enter, &__options-btn-clear{
+		height: 45px;
+		width: 100%;
+		border: 1px solid $dark-shade-25;
+		border-radius: 10px;
+		cursor: text;
+		font-size: $font-size_main;
+		&:hover, &:focus{
+			border: 1px solid $dark-shade-75;
+		}
+	}
+	&__options-amount-input, &__options-sorting-input{
+		cursor: text;
+		padding: 15px;
+		margin-top: 5px;
+	}
+	&__options-sorting{
+		position: relative;
+	}
+	&__options-sorting-arrow{
+		position: absolute;
+		height: 45px;
+		width: 45px;
+		top: 5px;
+		right: 0px;
+		background: url(../assets/images/triangle_black.svg) center center no-repeat;
+		cursor: pointer;
+		&_active{
+			transform: rotate(180deg);
+		}
+	}
+	&__options-sorting-dropdown{
+		position: absolute;
+		width: 100%;
+		margin-top: 10px;
+		border: 1px solid $dark-shade-75;
+		background-color: #fff;
+		&_hiden{
+			visibility: hidden;
+		}
+	}
+	&__options-sorting-dropdown-paragraph{
+		width: 100%;
+		border-bottom: 1px solid $dark-shade-75;
+		padding: 10px 14px;
+		cursor: pointer;
+		&:hover{
+			background-color: $purple;
+		}
+		&:last-child{
+			border-bottom: 0;
+		}
+	}
+
+	&__options-btn{
+		width: 100%;
+		display: flex;
+	}
+	&__options-btn-enter, &__options-btn-clear{
+		font-size: $font-size_big;
+		background-color: $light-purple;
+		cursor: pointer;
+	}
+	&__options-btn-enter{
+		margin-left: 5px;
+	}
+	&__options-btn-clear{
+		margin-right: 5px;
+	}
+	&__output-area{
+		display: flex;
+		width: 100%;
+		height: auto;
+		margin-top: 70px;
+	}
+
+	&__paragraphs{
+		width: 50%;
+		padding: 15px;
+		border: 2px dashed grey;
+	}
+	&__paragraph{
+		display: flex;
+		align-items: center;
+		min-height: 65px;
+		width: 100%;
+		margin-top: 15px;
+		background-color: $light-purple;
+		border-radius: 10px;
+		cursor: pointer;
+		user-select: none;
+		padding: 10px 15px 10px 0;
+		&:first-child{
+			margin-top: 0;
+		}
+		&_hiden{
+			visibility: hidden;
+		}
+		&_fake{
+			position: absolute;
+			margin: 0;
+			z-index: 100;
+		}
+		&:hover, &:focus{
+			box-shadow: inset 0px 0px 1px 1px $dark-shade-50;
+		}
+	}
+	&__paragraph-number{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 40px;
+		min-width: 40px;
+		border-radius: 100%;
+		margin-left: 15px;
+		background-color: $saturated-purple;
+		color: white;
+		pointer-events: none;
+	}
+	&__paragraph-text{
+		margin-left: 15px;
+		word-wrap: break-word;
+		pointer-events: none;
+	}
+
+	&__description-wrapper{
+		min-height: 100%;
+		width: 50%;
+		padding: 15px 15px 15px 23px;
+	}
+	&__description{
+		padding: 15px;
+		position: absolute;
+		height: auto;
+		font-weight: regular;
+		background-color: $light-purple;
+		border-radius: 10px;
+		font-size: $font-size_main;
+		&:before{
+			position: absolute;
+			height: 31px;
+			width: 31px;
+			top: 13px;
+			left: -20px;
+			background: url(../assets/images/triangle_purple.svg) center center no-repeat;
+			content: '';
+		}
+		&_hiden{
+			visibility: hidden;
+		}
+	}
+	&__description-parameters{
+		margin-top: 40px;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__description-image{
+		
+	}
+}
+
+#loading{
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	font-size: $font-size_bigest;
+	font-weight: bolder;
+	background-color: white;
+}

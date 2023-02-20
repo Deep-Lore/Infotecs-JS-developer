@@ -7,8 +7,43 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	
-
-	<script src="index.js"></script>
+	<div class="container">
+		<h1>Infotecs JS-developer</h1>
+		<div class="dataList">
+			<form class="dataList__options">
+				<label class="dataList__options-inner">
+					<span>Paragraph amount</span>
+					<input class="dataList__options-amount-input" type="text">
+				</label>
+				<label class="dataList__options-inner">
+					<span>Sorting</span>
+					<div class="dataList__options-sorting">
+						<input class="dataList__options-sorting-input" readonly type="text">
+						<div class="dataList__options-sorting-arrow"></div>
+						<ul class="dataList__options-sorting-dropdown dataList__options-sorting-dropdown_hiden"></ul>
+					</div>
+				</label>
+				<div class="dataList__options-btn">
+					<button class="dataList__options-btn-clear" type="button">Clear</button>
+					<button class="dataList__options-btn-enter" type="button">Enter</button>
+				</div>
+			</form>
+			<div class="dataList__output-area">
+				<div class="dataList__paragraphs"></div>
+				<div class="dataList__description-wrapper">
+					<div class="dataList__description dataList__description_hiden">
+						<img class="dataList__description-image" src="" alt="">
+						<div class="dataList__description-text"></div>
+						<div class="dataList__description-parameters">
+							<div class="dataList__description-price"></div>
+							<div class="dataList__description-rating"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="loading">Loading...</div>
+	<script src="js/index.js"></script>
 </body>
 </html>

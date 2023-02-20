@@ -1,0 +1,25 @@
+//Colors
+$dark-shade-100: rgba(31, 32, 65, 1);
+$dark-shade-75: rgba(31, 32, 65, .75);
+$dark-shade-50: rgba(31, 32, 65, 0.5);
+$dark-shade-25: rgba(31, 32, 65, 0.25);
+$dark-shade-10: rgba(31, 32, 65, 0.10);
+$dark-shade-5: rgba(31, 32, 65, 0.05);
+$saturated-purple: rgba(136, 92, 247, 1);
+$purple: rgba(235, 235, 243, 1);
+$light-purple: #dbd9e8;
+$blue: #8BA4F9;
+$light-blue: rgba(55%, 64%, 98%, 0.5);
+$light-grey: #E5E5E5;
+$dark-20: rgba(0, 0, 0, 0.2);
+$dark-12: rgba(0, 0, 0, 0.12);
+
+//Gradients
+$main-gradient-100: linear-gradient(180deg, $purple 0%, $blue 100%);
+$main-gradient-50: linear-gradient(180deg, $light-purple 0%, $light-blue 100%);
+
+//Fonts size
+$font-size_small: 12px;
+$font-size_main: 17px;
+$font-size_big: 19px;
+$font-size_bigest: 46px;
