@@ -45,7 +45,6 @@ inputAmount.onkeydown = function(e) {
       sortingList(inputSorting.value)
       createParagraph(+inputAmount.value)
       addMouseEvents(dataList.querySelectorAll('.dataList__paragraph'))
-      description.classList.add('dataList__description_hiden')
     }
   }
 }
@@ -56,7 +55,6 @@ inputSorting.onkeydown = function(e) {
       sortingList(inputSorting.value)
       createParagraph(+inputAmount.value)
       addMouseEvents(dataList.querySelectorAll('.dataList__paragraph'))
-      description.classList.add('dataList__description_hiden')
     }
   }
 }
@@ -65,7 +63,6 @@ btnClear.onclick = function() {
   inputAmount.value = ''
   inputSorting.value = ''
   sortingList('id')
-  description.classList.add('dataList__description_hiden')
 }
 
 //dropdown
@@ -96,10 +93,10 @@ document.onclick = (e) => {
 }
 
 // crete paragraphs //
-let defaultParagraphAmount = 15
+let defaultParagraphAmount = 10
 createParagraph(defaultParagraphAmount)
 addMouseEvents(dataList.querySelectorAll('.dataList__paragraph'))
-inputAmount.placeholder = `0 - ${list.length}`
+inputAmount.placeholder = `1 - ${list.length}`
 
 // Functions //
 /*
@@ -170,6 +167,9 @@ function addMouseEvents(paragraphList) {
         descriptionText.innerHTML = list[e.target.querySelector('.dataList__paragraph-number').innerHTML-1].description
         descriptionPrice.innerHTML = 'Price: ' + list[e.target.querySelector('.dataList__paragraph-number').innerHTML].price + '$'
         descriptionRating.innerHTML = 'Rating: ' + list[e.target.querySelector('.dataList__paragraph-number').innerHTML].rating
+    }
+    listItem.onmouseleave = (e) => {
+      description.classList.add('dataList__description_hiden')
     }
   })
 }
