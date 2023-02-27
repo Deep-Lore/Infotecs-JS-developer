@@ -27,29 +27,17 @@ const descriptionRating = description.querySelector('.dataList__description-rati
 
 // Buttons & inputs//
 btnEnter.onclick = function() {
+  if (inputSorting.value != '') sortingList(inputSorting.value, 2)
+  else sortingList('id', 1)
   if (inputAmount.value != '') {
-    if (inputSorting.value != '') sortingList(inputSorting.value)
     createParagraph(+inputAmount.value)
-    addMouseEvents(dataList.querySelectorAll('.dataList__paragraph'))
   }else{
-    sortingList(inputSorting.value)
     createParagraph(defaultParagraphAmount)
-    addMouseEvents(dataList.querySelectorAll('.dataList__paragraph'))
   }
-  description.classList.add('dataList__description_hiden')
+  addMouseEvents(dataList.querySelectorAll('.dataList__paragraph'))
 }
 
-inputAmount.onkeydown = function(e) {
-  if (e.keyCode === 13) {
-    if (inputAmount.value != '') {
-      sortingList(inputSorting.value)
-      createParagraph(+inputAmount.value)
-      addMouseEvents(dataList.querySelectorAll('.dataList__paragraph'))
-    }
-  }
-}
-
-inputSorting.onkeydown = function(e) {
+document.onkeydown = function(e) {
   if (e.keyCode === 13) {
     if (inputAmount.value != '') {
       sortingList(inputSorting.value)
@@ -62,7 +50,6 @@ inputSorting.onkeydown = function(e) {
 btnClear.onclick = function() {
   inputAmount.value = ''
   inputSorting.value = ''
-  sortingList('id')
 }
 
 //dropdown
@@ -193,7 +180,6 @@ function newBreakpoints(paragraphList){
 */
 function getParagraphIndex(paragraph) {
   let counter = 0
-  console.log(paragraph)
   breakPoints.forEach((breakPoint, i) => {
     if (paragraph.getBoundingClientRect().top + window.pageYOffset > breakPoint) {
       counter++
@@ -223,13 +209,23 @@ function createParagraph(amount) {
 }
 
 /*
-* Сортирует массив list по убыванию в зависимости от переданного параметра 
+* Сортирует массив list в зависимости от переданного параметра и принципа
 *
 * @param {string} parametr Устанавливает по какому параметру будет сортировка
+* @param {number} mode Указывет по какому принципу сортируются элементы
+*
+* mode == 1 сортирует список по убыванию
+* mode == 2 сортирует список по возрастанию
 */
-function sortingList(parametr) {
+function sortingList(parametr, mode = 2) {
   parametr = parametr.toLowerCase()
-  return list.sort((a, b) => a[parametr] < b[parametr] ? 1 : -1)
+  let sortParams
+  if(mode == 1){
+    sortParams = (a, b) => a[parametr] > b[parametr] ? 1 : -1
+  }else if(mode == 2){
+    sortParams = (a, b) => a[parametr] < b[parametr] ? 1 : -1
+  }
+  list.sort(sortParams)
 }
 
 /*
@@ -292,6 +288,13 @@ function fadeOut(elem) {
     } 
   },7)
 }
+
+// Предзгрузка изображений
+let preloadImages = []
+list.forEach((item, i) => {
+  preloadImages.push(new Image())
+  preloadImages[i].src = list[i]['images'][0]
+})
 
 // Скрытие экрана загрузки
 fadeOut(document.querySelector('#loading'))

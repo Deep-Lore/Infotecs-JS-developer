@@ -183,6 +183,7 @@ body {
   cursor: pointer;
   user-select: none;
   padding: 10px 15px 10px 0;
+  box-shadow: inset 0px 0px 1px 1px rgba(31, 32, 65, 0.25);
 }
 .dataList__paragraph:first-child {
   margin-top: 0;
@@ -196,7 +197,7 @@ body {
   z-index: 100;
 }
 .dataList__paragraph:hover, .dataList__paragraph:focus {
-  box-shadow: inset 0px 0px 1px 1px rgba(31, 32, 65, 0.5);
+  box-shadow: inset 0px 0px 1px 1px rgba(31, 32, 65, 0.75);
 }
 .dataList__paragraph-number {
   display: flex;
@@ -240,6 +241,9 @@ body {
 }
 .dataList__description_hiden {
   visibility: hidden;
+}
+.dataList__description-text {
+  margin-top: 10px;
 }
 .dataList__description-parameters {
   margin-top: 40px;

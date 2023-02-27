@@ -124,6 +124,7 @@ body{
 		cursor: pointer;
 		user-select: none;
 		padding: 10px 15px 10px 0;
+		box-shadow: inset 0px 0px 1px 1px $dark-shade-25;
 		&:first-child{
 			margin-top: 0;
 		}
@@ -136,7 +137,7 @@ body{
 			z-index: 100;
 		}
 		&:hover, &:focus{
-			box-shadow: inset 0px 0px 1px 1px $dark-shade-50;
+			box-shadow: inset 0px 0px 1px 1px $dark-shade-75;
 		}
 	}
 	&__paragraph-number{
@@ -182,6 +183,9 @@ body{
 		&_hiden{
 			visibility: hidden;
 		}
+	}
+	&__description-text{
+		margin-top: 10px;
 	}
 	&__description-parameters{
 		margin-top: 40px;
