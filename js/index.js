@@ -152,8 +152,8 @@ function addMouseEvents(paragraphList) {
         description.classList.remove('dataList__description_hiden')
         descriptionImage.src = list[e.target.querySelector('.dataList__paragraph-number').innerHTML-1].images[0]
         descriptionText.innerHTML = list[e.target.querySelector('.dataList__paragraph-number').innerHTML-1].description
-        descriptionPrice.innerHTML = 'Price: ' + list[e.target.querySelector('.dataList__paragraph-number').innerHTML].price + '$'
-        descriptionRating.innerHTML = 'Rating: ' + list[e.target.querySelector('.dataList__paragraph-number').innerHTML].rating
+        descriptionPrice.innerHTML = 'Price: ' + list[e.target.querySelector('.dataList__paragraph-number').innerHTML-1].price + '$'
+        descriptionRating.innerHTML = 'Rating: ' + list[e.target.querySelector('.dataList__paragraph-number').innerHTML-1].rating
     }
     listItem.onmouseleave = (e) => {
       description.classList.add('dataList__description_hiden')
